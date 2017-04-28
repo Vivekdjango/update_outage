@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://v4-alpha.getbootstrap.com/examples/dashboard/# -->
+<html lang="en" class="gr__v4-alpha_getbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Outage Tool">
+    <meta name="author" content="Vivek Sinha">
+
+    <title>NOC Outage Tool</title>
+
+    <!-- Bootstrap core CSS -->
+<!--    <link href="Dashboard/bootstrap.min.css" rel="stylesheet">
+    <link href="Dashboard/dashboard.css" rel="stylesheet">
+<link href="../../css/infra_hardware/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="bootstrap-sortable.css" rel="stylesheet" type="text/css">-->
+<!--New-->
+
+<link href="css/new/bootstrap.min.css" rel="stylesheet">   
+<script src="css/new/jquery.min.js"></script>
+<link rel="stylesheet" 
+href="css/new/jquery.dataTables.min.css"></style>
+<script type="text/javascript" 
+src="css/new/jquery.dataTables.min.js"></script>
+<script type="text/javascript" 
+src="css/new/bootstrap.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="css/jira.css">
+
+<!--
+<script src="jquery-1.11.3.min.js"></script>
+<script src="bootstrap-sortable.js"></script>
+-->
+<style>
+.sidebar{
+
+	background-color:black;
+	padding-bottom: 100%;
+}
+a{
+color:white;
+margin-left:0px;
+}
+a.hover{
+	color:white;
+}
+li
+{
+	margin-top:7px;
+}
+.nav-sidebar{
+	margin-top:0px;
+}
+
+
+.navbar-brand{
+	color:blue;
+}
+
+.table thead tr th
+{
+	padding:4px;
+	text-align:center;
+}
+.table-responsive  tr td { 
+	padding:4px;
+} 
+
+.table-responsive{
+	margin-top:20px;
+	text-align:left;
+	padding-left:0px;
+	margin-left:0px;
+}
+.navbar .navbar-fixed-top .bg-inverse{
+	background-color:white;
+	background-image:none;
+}
+.wrapper{
+	padding-left:0px;
+	margin-left:0px;
+}
+.nb{
+	margin-top:70px;
+}
+.dataTables_wrapper .dataTables_length {
+float: right;
+}
+.dataTables_wrapper .dataTables_filter {
+float: left;
+text-align: left;
+border-radius:12px solid #dbdbdb;
+}
+.hover{
+	background-color:blue;	
+}
+</style>
+ </head>
+
+  <body data-gr-c-s-loaded="true">
+
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar content">
+	    <li><a href="#"><img style="width:100%;height: 60px;" src="css/new/images1.png"></a></li>	
+            <li class="active" style="margin-top: 5px;"><a href="http://localhost:82/cgi-bin/updated_outage/new.py">Dashboard <span class="sr-only">(current)</span></a></li>
+            <li><a href="http://localhost:82/cgi-bin/updated_outage/new.py">Home</a></li>
+            <li><a href="http://localhost:82/test/updated_outage/button.html">Outage Action</a></li>
+            <li><a href="http://localhost:82/test/updated_outage/jira_create.html">Jira Action</a></li>
+          </ul>
+        </div>
+	
+        <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 main">
+	   
+	<form class="form-basic" method="get" action="/cgi-bin/updated_outage/jira_c.py" >
+
+		<div class="col-md-4" style="padding-left: 0px;  padding-right: 0px;">
+		<img class="img-responsive" src="image/jira.jpg">
+		</div>
+            <div class="form-title">
+                <h3 style="color: #003366; margin-top: 31px;">Create Jira Ticket</h3>
+            </div>
+	<div class="form-group">
+		<label for ="sev">Severity:</label>
+		<div class="col-sm-2">
+		<select class="form-control" id="sev" name='sev' style="margin-top:15px;">
+			<option >S1</option>
+			<option >S0</option>
+		</select>
+	</div>
+	</div>
+            <div class="form-group">
+                <label   for="form_item1" style="color: #003366;">Subject:</label>
+                <input id="form_item1" type="text" name="sub">
+            </div>
+
+            <div class="form-group">
+                <label   for="form_item2" style="color: #003366;">Comments:</label>
+                <textarea id="form_item2" name="comm" rows="7" cols="50"></textarea>
+            </div>
+
+	<div class="form-group">
+		<input id="form_item3" type="submit" name="create" value="Create" style="background-color: #003366;"/>
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+<script>
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
+</script>
+
+</body></html>
+

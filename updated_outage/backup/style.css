@@ -1,0 +1,63 @@
+.container
+{
+	width:100%;
+	
+}
+.wrapper
+{
+	width:900px;
+}
+body
+{
+	background-image:url('image/cool-light-blue-backgrounds-4.jpg');
+}
+
+.dark
+{
+	background-color:#003366;
+}
+ul
+{
+}
+ul li
+{
+	display:inline-block;
+	height:50px;
+	line-height:50px;
+	background-color:#003366;
+	width:200px;
+	font-family: 'Oleo Script', cursive;
+	position:relative;
+}
+ul li a
+{
+	color:white;
+        text-decoration:none;
+        display:block;
+	text-align:center;
+}
+ul li a:hover
+{
+	background-color:white;
+	color:#003366;
+}
+h2
+{
+	float:right;
+	text-align:center;
+	color:white;
+	margin-right:200px;
+	font-family: 'Orbitron', sans-serif;
+
+}
+ul ul
+{
+	position:absolute;
+	margin:0px;
+	padding:0px;
+	display:none;
+}
+ul li:hover ul
+{
+	display:block;
+}

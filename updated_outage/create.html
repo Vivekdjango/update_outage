@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://v4-alpha.getbootstrap.com/examples/dashboard/# -->
+<html lang="en" class="gr__v4-alpha_getbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Outage Tool">
+    <meta name="author" content="Vivek Sinha">
+
+    <title>NOC Outage Tool</title>
+
+    <!-- Bootstrap core CSS -->
+<!--    <link href="Dashboard/bootstrap.min.css" rel="stylesheet">
+    <link href="Dashboard/dashboard.css" rel="stylesheet">
+<link href="../../css/infra_hardware/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="bootstrap-sortable.css" rel="stylesheet" type="text/css">-->
+<!--New-->
+
+<link href="css/new/bootstrap.min.css" rel="stylesheet">   
+<script src="css/new/jquery.min.js"></script>
+<link rel="stylesheet" 
+href="css/new/jquery.dataTables.min.css"></style>
+<script type="text/javascript" 
+src="css/new/jquery.dataTables.min.js"></script>
+<script type="text/javascript" 
+src="css/new/bootstrap.min.js"></script>
+
+<!--
+<script src="jquery-1.11.3.min.js"></script>
+<script src="bootstrap-sortable.js"></script>
+-->
+<style>
+.sidebar{
+
+	background-color:black;
+	padding-bottom: 100%;
+}
+a{
+color:white;
+margin-left:0px;
+}
+a.hover{
+	color:white;
+}
+li
+{
+	margin-top:7px;
+}
+.nav-sidebar{
+	margin-top:0px;
+}
+
+
+.navbar-brand{
+	color:blue;
+}
+
+.table thead tr th
+{
+	padding:4px;
+	text-align:center;
+}
+.table-responsive  tr td { 
+	padding:4px;
+} 
+
+.table-responsive{
+	margin-top:20px;
+	text-align:left;
+	padding-left:0px;
+	margin-left:0px;
+}
+.navbar .navbar-fixed-top .bg-inverse{
+	background-color:white;
+	background-image:none;
+}
+.wrapper{
+	padding-left:0px;
+	margin-left:0px;
+}
+.nb{
+	margin-top:70px;
+}
+.dataTables_wrapper .dataTables_length {
+float: right;
+}
+.dataTables_wrapper .dataTables_filter {
+float: left;
+text-align: left;
+border-radius:12px solid #dbdbdb;
+}
+.hover{
+	background-color:blue;	
+}
+</style>
+ </head>
+
+  <body data-gr-c-s-loaded="true">
+
+<!--    <nav class="navbar navbar-fixed-top navbar-default">
+<a class="navbar-brand" href="#">NOC Outage Tool</a>
+	<div id="navbar" class="navbar-collapse collapse">
+	</div>	
+</nav>
+
+        <form class="float-xs-right">
+          <input type="text" class="form-control" placeholder="Search...">
+        </form>
+    
+  </div>-->
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar content">
+	    <li><a href="#"><img style="width:100%;height: 60px;" src="css/new/images1.png"></a></li>	
+            <li class="active" style="margin-top: 5px;"><a href="http://localhost:82/cgi-bin/updated_outage/new.py">Dashboard <span class="sr-only">(current)</span></a></li>
+            <li><a href="http://localhost:82/cgi-bin/updated_outage/new.py">Home</a></li>
+            <li><a href="http://localhost:82/test/updated_outage/button.html">Outage Action</a></li>
+            <li><a href="http://localhost:82/test/updated_outage/jira_create.html">Jira Action</a></li>
+          </ul>
+        </div>
+	
+        <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 main">
+
+<div class="container">
+<form class="form-horizontal" method="post" action="/cgi-bin/updated_outage/create.py">
+<h2 style="color: blue;padding: 10px;font-type: georgia;"><u><center>Create Incident</center></u></h2>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="priority">Priority:</label>
+    <div class="col-sm-2">
+    <select class="form-control" id="priority" name="priority">
+      <option>S1</option>
+      <option>S0</option>    
+    </select>
+	</div>
+<br/>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="sev">Severity:</label>
+    <div class="col-sm-6"> 
+      <input type="text" class="form-control" id="sev" name="sev" value="RED" color="red" style="color:red;" disabled>
+    </div>
+  </div>
+  <br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="subject">Subject:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="subject" name="subject" required="required">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="time">Downtime:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="time"  name="time">
+    </div>
+  </div>
+<br/>
+ <div class="form-group">
+    <label for="fileinput" class="control-label col-sm-2">Attachment:</label>
+    <input type="file" class="form-control-file" id="fileinput" name="fileinput" aria-describedby="fileHelp">
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="jira">Jira:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="jira" name="jira" placeholder="Enter Jira ID" required="required">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="slack">Slack:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="slack" name="slack" placeholder="Enter Slack ID" required="required">
+    </div>
+  </div>
+
+<br/>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="app">Application:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="app" name="app" placeholder="Enter application impacted">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="business">Business:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="business" name="business" placeholder="Enter business impacted">
+    </div>
+  </div>
+
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="region">Region :</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="region" name="region" placeholder="Enter region impacted">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="reporter">Reporter:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="reporter" name="reporter">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="owner">Incident Owner:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="owner" name="owner">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="update">Next Update:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="update" name="update">
+    </div>
+  </div>
+<br/> 
+ <div class="form-group">
+    <label class="control-label col-sm-2" for="desc">Description:</label>
+    <div class="col-sm-6">
+    <textarea class="form-control" id="desc" rows="7" required="required" name="desc"></textarea>
+  </div>    
+</div>
+  </div>
+
+<br/>
+<div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-6">
+      <button type="submit" class="btn btn-default">Create</button>
+    </div>
+  </div>
+</form>
+
+</div>
+<!--
+Javaacript
+-->
+<script>
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
+</script>
+
+</body></html>
+

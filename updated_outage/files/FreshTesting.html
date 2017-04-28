@@ -1,0 +1,99 @@
+
+<!-- saved from url=(0047)http://v4-alpha.getbootstrap.com/examples/blog/ -->
+<html lang="en" class="gr__v4-alpha_getbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NOC Outage Tool</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/blog/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/blog/blog.css" rel="stylesheet">
+
+<style>
+.navbar-form{
+	margin-top:9px;
+	float:right;
+	text-align:right;
+}
+
+table tr{
+   height: 10px;
+}
+</style>
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav ">
+          <a class="nav-link active" href="http://localhost:82/cgi-bin/updated_outage/new.py">Home</a>
+          <a class="nav-link" href="http://localhost:82/test/updated_outage/button.html">Outage</a>
+          <a class="nav-link" href="href=http://localhost:82/test/updated_outage/jira_create.html">Create Jira</a>
+          <a class="nav-link" href="http://localhost:82/test/updated_outage/slack_channel.html">Create Slack </a>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+		</div>
+		</form>
+	</div>
+        </nav>
+	</div>
+<div style="margin-left: 200px;margin-right: 100px; padding: auto;">  
+<b><center><u>S1 Outage Communication</u></center></b>
+<br><br> <b>Date</b>:09-December-2016 <br> <br> <strong>Time</strong>:16:05 PM (IST)<br><br> 
+<p style='color:orange'><b><u>Status:</u></b>AMBER</p>
+ <br><b>Downtime</b>:10 (minute)<br><br><b>Issue</b>:Fresh Testing <br><br> <b>Jira:</b>
+<a href=https://jira.corp.inmobi.com:8443/browse/noc-123>noc-123</a>
+ <br><br><b>Slack:</b>
+<a href=https://inmobi.slack.com/messages/noc-123>noc-123</a>
+<br> <br><b>Application Impacted:</b>nthng <br> <b>Buisness Impact:</b>nthng <br> <b>Region Impacted:</b>nc<br>  <br><b><u>Summary:</b></u><br>
+<ul><li>This is fresh testing</li></ul>
+<ul><li>Hello testing</li></ul>
+
+<ul><li>DOne</li></ul>
+
+<ul><li>DOne</li></ul>
+
+<b>Next Update:</b>8<br>
+
+<hr style='border-top: 2px solid black;'>
+<h4><center><u> Enter New Updates </u></center></h4>
+ 
+        <br/>
+        <form action="/cgi-bin/updated_outage/pt_test.py" method="get">
+        
+         <div class="form-row">
+                <label>
+                    <span>Status:</span>
+                    <select name="status" style="width:100px; margin-left: 65px;">
+                        <option value="red">RED</option>
+                        <option value="amber">AMBER</option>
+                        <option value="resolved">GREEN</option>
+
+                   </select>
+               </label>
+          </div>
+
+        <br/>
+        <div>
+        <b>Next Update: </b><input type='text' name='next'>
+
+        </div>
+        <br />
+        <div>
+        <b>Comments: </b><br/>
+        <textarea name="comm" style="height:100px; width:320px; display: inline-block;" required="required"></textarea>
+       <input type="submit" value="submit" style="background-color: #003366;display: inline-block; margin-bottom: 20px;border-radius:5px;color: white;width: 80px;height:40px;">
+        </div>
+        </form>
+</div>
+</div>
+
+</body>

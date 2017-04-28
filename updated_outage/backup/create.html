@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://v4-alpha.getbootstrap.com/examples/blog/ -->
+<html lang="en" class="gr__v4-alpha_getbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NOC Outage Tool</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/blog/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/blog/blog.css" rel="stylesheet">
+ <link href="css/form-basic.css" rel="stylesheet">
+<style>
+.navbar-form{
+	margin-top:9px;
+	float:right;
+	text-align:right;
+}
+
+table tr{
+   height: 10px;
+}
+.navbar {
+        background-color: #3399ff;
+        background-image: none;
+    }
+
+.container {
+	border:1px solid blue;
+	box-shadow: 4px 4px 40px 4px skyblue;
+
+}
+
+.form-horizontal .form-group{
+	margin-top:30px;
+}
+
+
+body{
+	margin-top:50px;
+	margin-left:80px;
+}
+textarea{
+	margin-bottom: 12px;
+}
+h2{
+	text-align:center;
+}
+label
+{
+	color:blue;
+}
+button{
+	background-color:blue;
+	color:white;
+	margin-left:480px;
+	margin-right:480px;
+}
+</style>
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+    <div class="blog-masthead">
+      <div class="container-fluid">
+        <nav class="navbar navbar-reverse navbar-fixed-top ">
+	<div class=="container">
+          <a class="nav-link active" href="http://localhost:82/cgi-bin/updated_outage/new.py">Home</a>
+          <a class="nav-link" href="http://localhost:82/test/updated_outage/button.html">Outage</a>
+          <a class="nav-link" href="http://localhost:82/test/updated_outage/jira_create.html">Create Jira</a>
+          <a class="nav-link" href="http://localhost:82/test/updated_outage/slack_channel.html">Create Slack </a>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control"  placeholder="Search" name="q">
+		</div>
+		</div>
+		</form>
+	</div>
+        </nav>
+	</div>
+    </div>
+<div class="container">
+<form class="form-horizontal" method="post" action="/cgi-bin/updated_outage/create.py">
+<h2 style="color: blue;padding: 10px;font-type: georgia;"><u>Create Incident</u></h2>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="priority">Priority:</label>
+    <div class="col-sm-2">
+    <select class="form-control" id="priority" name="priority">
+      <option>S1</option>
+      <option>S0</option>    
+    </select>
+	</div>
+<br/>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="sev">Severity:</label>
+    <div class="col-sm-6"> 
+      <input type="text" class="form-control" id="sev" name="sev" value="RED" color="red" style="color:red;" disabled>
+    </div>
+  </div>
+  <br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="subject">Subject:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="subject" name="subject" required="required">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="time">Downtime:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="time"  name="time">
+    </div>
+  </div>
+<br/>
+ <div class="form-group">
+    <label for="fileinput" class="control-label col-sm-2">Attachment:</label>
+    <input type="file" class="form-control-file" id="fileinput" name="fileinput" aria-describedby="fileHelp">
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="jira">Jira:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="jira" name="jira" placeholder="Enter Jira ID" required="required">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="slack">Slack:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="slack" name="slack" placeholder="Enter Slack ID" required="required">
+    </div>
+  </div>
+
+<br/>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="app">Application:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="app" name="app" placeholder="Enter application impacted">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="business">Business:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="business" name="business" placeholder="Enter business impacted">
+    </div>
+  </div>
+
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="region">Region :</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="region" name="region" placeholder="Enter region impacted">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="reporter">Reporter:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="reporter" name="reporter">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="owner">Incident Owner:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="owner" name="owner">
+    </div>
+  </div>
+<br/>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="update">Next Update:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="update" name="update">
+    </div>
+  </div>
+<br/> 
+ <div class="form-group">
+    <label class="control-label col-sm-2" for="desc">Description:</label>
+    <div class="col-sm-6">
+    <textarea class="form-control" id="desc" rows="7" required="required" name="desc"></textarea>
+  </div>    
+</div>
+  </div>
+
+<br/>
+<div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-6">
+      <button type="submit" class="btn btn-default">Create</button>
+    </div>
+  </div>
+</form>
+
+</div>
+<!--
+Javaacript
+
+-->
+  <script src="js/jquery-1.8.3.min.js"></script>
+   <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+   <script type="text/javascript" src="js/DT_bootstrap.js"></script>
+   <script src="js/dynamic-table.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="css/blog/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="css/Dashboard/jquery.min.js"><\/script>')</script>
+    <script src="css/blog/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="css/blog/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="css/blog/ie10-viewport-bug-workaround.js"></script>
+  
+<script src="css/Dashboard/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="css/Dashboard/jquery.min.js"><\/script>')</script>
+    <script src="css/Dashboard/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="css/Dashboard/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="css/Dashboard/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="css/Dashboard/ie10-viewport-bug-workaround.js"></script>
+
+
+
+    </div>
+</div>
+<div>
+</body>
+
+</html>

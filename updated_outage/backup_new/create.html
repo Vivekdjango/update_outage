@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://v4-alpha.getbootstrap.com/examples/blog/ -->
+<html lang="en" class="gr__v4-alpha_getbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NOC Outage Tool</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/blog/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/blog/blog.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/form-basic.css">
+
+<style>
+.navbar-form{
+	margin-top:9px;
+	float:right;
+	text-align:right;
+}
+
+table tr{
+   height: 10px;
+}
+.navbar {
+        background-color: #3399ff;
+        background-image: none;
+    }
+
+
+</style>
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+    <div class="blog-masthead">
+      <div class="container-fluid">
+        <nav class="navbar navbar-reverse navbar-fixed-top ">
+	<div class='container'>
+          <a class="nav-link active" href="http://localhost:82/cgi-bin/updated_outage/new.py">Home</a>
+          <a class="nav-link" href="http://localhost:82/test/updated_outage/button.html">Outage</a>
+          <a class="nav-link" href="http://localhost:82/test/updated_outage/jira_create.html">Create Jira</a>
+          <a class="nav-link" href="http://localhost:82/test/updated_outage/slack_channel.html">Create Slack </a>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+		</div>
+		</form>
+	</div>
+	</div>
+        </nav>
+	</div>
+    </div>
+
+<div class="container-fluid">
+
+    <div class="main-content">
+
+        <!-- You only need this form and the form-basic.css -->
+
+        <form class="form-basic" method="post" action="/cgi-bin/updated_outage/create.py" style="margin-top:10%; margin-bottom:6%;">
+
+            <div class="form-title-row">
+                <h1>Create Incident</h1>
+            </div>
+
+
+            <div class="form-row">
+                <label>
+                    <span>Priority:</span>
+                    <select name="priority" style="width:100px; margin-left:10px;">
+                        <option value="S1">S1</option>
+                        <option value="S0">S0</option>
+                    </select>
+                </label>
+            </div>
+
+
+
+            <div class="form-row">
+                <label>
+                    <span>Status:</span>
+                    <input type="text" name="status" value="RED" color="red" style="color:red;" disabled>
+                </label>
+            </div>
+
+
+
+            <div class="form-row">
+                <label>
+                    <span>Subject:</span>
+                    <textarea name="subject" required="required"></textarea>
+                </label>
+            </div>
+
+
+
+
+            <div class="form-row">
+                <label>
+                    <span>Downtime:</span>
+                    <input type="text" name="time">
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Jira:</span>
+                    <input type="text" name="jira">
+                </label>
+            </div>
+                        
+
+            <div class="form-row">
+                <label>
+                    <span>Slack:</span>
+                    <input type="text" name="slack">
+                </label>
+            </div>
+
+
+            <div class="form-row">
+                <label>
+                    <span>Application Impacted:</span>
+                    <input type="text" name="app">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Business Impact:</span>
+                    <input type="text" name="business">
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Region Impacted:</span>
+                    <input type="text" name="region">
+                </label>
+            </div>
+
+    	   <div class="form-row">
+                <label>
+                    <span>Reporter:</span>
+                    <input type="text" name="reporter">
+                </label>
+            </div>
+
+
+    	  <div class="form-row">
+                <label>
+                    <span>Incident Owner:</span>
+                    <input type="text" name="owner">
+                </label>
+            </div>
+
+
+
+
+	   <div class="form-row">
+                <label>
+                    <span>Next Update:</span>
+                    <input type="text" name="update">
+                </label>
+            </div>
+
+
+
+
+            <div class="form-row">
+                <label>
+                    <span>Description</span>
+                    <textarea name="desc" tabindex="4" style="height:150px;"></textarea>
+                </label>
+            </div>
+
+
+            <div class="form-row">
+
+<button style="margin-left:50%" href="#">Create</a></button>
+        </div>
+        </form>
+
+  <script src="js/jquery-1.8.3.min.js"></script>
+   <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+   <script type="text/javascript" src="js/DT_bootstrap.js"></script>
+   <script src="js/dynamic-table.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="css/blog/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="css/Dashboard/jquery.min.js"><\/script>')</script>
+    <script src="css/blog/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="css/blog/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="css/blog/ie10-viewport-bug-workaround.js"></script>
+  
+<script src="css/Dashboard/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="css/Dashboard/jquery.min.js"><\/script>')</script>
+    <script src="css/Dashboard/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="css/Dashboard/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="css/Dashboard/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="css/Dashboard/ie10-viewport-bug-workaround.js"></script>
+
+
+
+    </div>
+</div>
+<div>
+</body>
+
+</html>
